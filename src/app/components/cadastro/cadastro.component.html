@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Cadastrando produto</h1>
+<div mat-dialog-content>
+
+    <div class="example-container">
+        <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input matInput #input placeholder="Nome do produto" [(ngModel)]="nome">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Categoria</mat-label>
+            <mat-select [(ngModel)]="categoria">
+                <mat-option value="ELETRONICO">Eletronico</mat-option>
+                <mat-option value="MOVEL">Móvel</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button mat-dialog-close color="warn">Fechar</button>
+    <button mat-raised-button color="primary" (click)="onSalvar()">Salvar
+        <mat-icon *ngIf="isLoading">
+            <mat-spinner color="accent" diameter="20"></mat-spinner>
+        </mat-icon>
+    </button>
+    <!-- <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar> -->
+</div>
